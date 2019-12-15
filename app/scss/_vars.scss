@@ -1,0 +1,66 @@
+$bg1: #000;
+$bg2: #34ce30;
+$bg3: #212121;
+
+$text1: #fff;
+$text2: #222;
+$text3: #999;
+$text4: #ffcc66;
+$text5: #666;
+$text6: #aeb0b5;
+$text7: #f3b93e;
+$text8: #ccc;
+
+$border1: #333;
+$border2: #2c2c2c;
+$border3: #373737;
+
+
+// ===============================================
+// MIXINS
+// ===============================================
+
+@mixin exo300 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+}
+
+@mixin exo400 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+}
+
+@mixin exo600 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+}
+
+@mixin exo700 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+}
+
+// ================================================
+
+@mixin u400 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+@mixin u700 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+// ================================================
+
+@mixin os400 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+// ================================================
+@mixin p400 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
