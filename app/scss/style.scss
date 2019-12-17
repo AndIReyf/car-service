@@ -232,8 +232,8 @@
   background-color: $bg4;
   margin-top: -10vh;
   padding-top: 20vh;
-  margin-bottom: -12vh;
-  padding-bottom: 22vh;
+  margin-bottom: -40vh;
+  padding-bottom: 50vh;
 
   &__content {
     display: flex;
@@ -246,7 +246,7 @@
     height: 70px;
     margin: 0 auto 30px;
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -285,58 +285,51 @@
   Section projects 
   ========================== */
 
-.projects{
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
-  
+.projects {
+  clip-path: polygon(0 0, 100% calc(10% - 4vh), 100% calc(100% - 10vh), 0% 100%);
+  background-color: $bg1;
+  padding: 100px 0;
 
-  &__img{
-    height: 120vh;
-    background-color: $bg1;
-    padding-top: 50px;
-  }
-
-  &__wrap{
+  &__wrap {
     height: 100%;
   }
 
-  &__title{
-    width: 230px;
+  &__title {
     color: $text1;
     @include exo400;
     font-size: 3em;
-    padding: 0 25px;
-    margin: 1.2em 0;
+    margin-bottom: 1.2em;
   }
 
-  &__content{
+  &__content {
     display: flex;
     margin-bottom: 50px;
 
-    &-box{
+    &-box {
       width: 50%;
     }
 
-    &-box:nth-child(2){
+    &-box:nth-child(2) {
       display: flex;
       flex-wrap: wrap;
-      
     }
 
     &-img {
       width: 100%;
       height: 480px;
 
-      img{
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
 
-    &-element{
+    &-element {
       width: 50%;
       height: calc(480px / 2);
-      img{
+
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -344,49 +337,282 @@
     }
   }
 
-  &__description{
+  &__description {
     @include exo300;
     color: $text3;
     text-align: center;
     font-size: 14px;
     margin-bottom: 50px;
 
-    span{
+    span {
       color: $text8;
     }
   }
 
-  &__link{
+  &__link {
     text-align: right;
-    @include exo300;
-    font-size: 24px;
-    color: $text3;
-    border-left: 2px solid $border4;
-    padding-left: 24px;
-    float: right;
-    transition: color .3s, border-left .3s;
 
-    &:hover{
-      color: $text1;
-      border-left: 2px solid $border5;
+    a {
+      @include exo300;
+      font-size: 24px;
+      color: $text3;
+      border-left: 2px solid $border4;
+      padding-left: 24px;
+      transition: color .3s, border-left .3s;
+
+      &:hover {
+        color: $text1;
+        border-left: 2px solid $border5;
+      }
     }
   }
 }
 
 /*==========================
-  Section certificate
+  Section repair
   ========================== */
 
+.repair {
+  margin-top: -10vh;
+  background-color: $bg5;
+  padding: 15em 0;
+
+  .container {
+    position: relative;
+  }
+
+  &__decor {
+    position: absolute;
+    right: -3%;
+    bottom: -15%;
+    @include exo300;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: $text3;
+    transform: rotate(-90deg);
+
+    span {
+      position: relative;
+      padding-left: 40px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 1px;
+        background-color: $text3;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%);
+      }
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__content {
+    flex: 0 0 50%;
+    display: flex;
+  }
+
+  &__service {
+    align-self: center;
+    padding-right: 40px;
+
+    &-title {
+      @include exo400;
+      font-size: 28px;
+      color: $text2;
+      margin-bottom: 30px;
+    }
+
+    &-text {
+      @include os400;
+      font-size: 14px;
+      color: $text2;
+      line-height: 28px;
+    }
+  }
+
+  &__repair-service {
+    flex: 0 0 260px;
+    height: 500px;
+    background-color: $bg1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 30px;
+
+    &:hover {
+
+      img {
+        opacity: 1;
+      }
+
+      .repair__repair-service-link {
+        background-color: rgba($bg5, 1);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .5;
+      transition: opacity .3s;
+    }
+
+    &-title,
+    &-link {
+      @include exo400;
+      color: $text1;
+      font-size: 18px;
+      position: absolute;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    &-title {
+      bottom: calc(500px - 20%);
+    }
+
+    &-link {
+      top: calc(500px - 20%);
+      background-color: rgba($bg5, .5);
+      padding: 10px 0;
+      transition: background-color .3s, color .3s;
+
+      &:hover {
+        color: $text2;
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    position: relative;
+
+    .slick-dots {
+      position: absolute;
+      top: -2.5rem;
+      right: 1rem;
+
+      li {
+        display: inline-block;
+        margin-left: 10px;
+
+        &.slick-active {
+
+          button {
+            background-color: rgba($bg1, 1);
+          }
+        }
+      }
+
+      button {
+        font: 400 0px Arial;
+        padding: 0;
+        border: none;
+        background-color: rgba($bg1, .5);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        outline: none;
+      }
+    }
+  }
+
+  &__slider-inner {
+    width: 50%;
+    display: flex !important;
+    justify-content: space-around;
+  }
+
+  .slick-slider {
+    width: 50%;
+  }
+
+  &__slider-content {
+
+    &:hover {
+
+      img {
+        opacity: 1;
+      }
+
+      .repair__slider-link {
+        color: $text2;
+      }
+    }
+  }
+
+  &__slider-img {
+    height: 180px;
+    width: 270px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: $bg1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .5;
+      transition: opacity .3s;
+    }
+  }
+
+  &__slider-wrap {
+    width: 270px;
+    padding: 24px;
+  }
+
+  &__slider-title {
+    @include exo400;
+    font-size: 18px;
+    color: $text2;
+    margin-bottom: 25px;
+  }
+
+  &__slider-text {
+    @include os400;
+    font-size: 14px;
+    color: $text10;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__slider-link {
+    @include p400;
+    font-size: 18px;
+    color: $text4;
+    padding-right: 35px;
+    position: relative;
+    transition: color .3s;
+
+    &::after {
+      content: '\f061';
+      position: absolute;
+      font-family: 'icomoon';
+      font-size: 18px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
 
 /*==========================
-  Section certificate end
+  Section repair end
   ========================== */
 
 
 
-/*==========================
-  Section projects end
-  ========================== */
+
 
 
 

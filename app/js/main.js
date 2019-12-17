@@ -27,4 +27,13 @@ $(function () {
     }
   });
 
+
+  $('.repair__slider').slick({
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    arrows: false,
+    fade: true,
+    dots: true,
+  });
+
 });
