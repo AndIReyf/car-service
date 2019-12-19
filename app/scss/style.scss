@@ -111,6 +111,7 @@
 
 .service {
   width: 100%;
+  height: 100%;
   margin-top: 110px;
   position: relative;
   overflow: hidden;
@@ -168,15 +169,12 @@
 }
 
 .service-slider {
+
   &__content {
-    height: calc(100vh - 110px);
+    height: 100vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
-
-  .container {
-    height: 100%;
   }
 
   &__box {
@@ -359,10 +357,22 @@
       border-left: 2px solid $border4;
       padding-left: 24px;
       transition: color .3s, border-left .3s;
+      position: relative;
 
       &:hover {
         color: $text1;
         border-left: 2px solid $border5;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        border: 1px solid $border5;
+        bottom: -200%;
+        left: -100%;
+        z-index: -1;
       }
     }
   }
@@ -376,6 +386,7 @@
   margin-top: -10vh;
   background-color: $bg5;
   padding: 15em 0;
+  overflow: hidden;
 
   .container {
     position: relative;
@@ -383,7 +394,7 @@
 
   &__decor {
     position: absolute;
-    right: -3%;
+    right: -4%;
     bottom: -15%;
     @include exo300;
     letter-spacing: 2px;
@@ -611,12 +622,381 @@
   ========================== */
 
 
+/*==========================
+  Section service slider
+  ========================== */
+
+.service-slid {
+  background-color: $bg1;
+  margin-top: -18vh;
+  padding: 220px 0;
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+}
+
+.wrap {
+  display: flex;
+}
+
+.main-slider {
+  width: 75%;
+
+  &__content {
+    display: flex !important;
+  }
+
+  &__box {
+    align-self: center;
+
+    &.info {
+      margin-right: 60px;
+    }
+  }
+
+  &__box {
+
+    &.car {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 400%;
+        height: 80%;
+        left: -300%;
+        top: 10%;
+        border: 1px solid $border4;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__title {
+    @include exo400;
+    font-size: 48px;
+    color: $text2;
+    margin-bottom: 70px;
+  }
+
+  &__text {
+    @include os400;
+    font-size: 14px;
+    color: $text5;
+    line-height: 30px;
+  }
+}
+
+.sub-slider {
+  width: 25%;
+  position: relative;
+
+  .slick-arrow {
+    position: absolute;
+    right: -10%;
+  }
+
+  .slick-next {
+    top: 0;
+  }
+
+  .slick-prev {
+    top: 40px;
+  }
+
+  button {
+    font-size: 24px;
+    padding: 0px;
+    border-width: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    color: rgba($text9, .5);
+    transition: color .3s;
+
+    &:focus,
+    &:hover {
+      color: rgba($text9, 1);
+    }
+  }
+
+  &__content {
+    text-align: center;
+    padding-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    @include exo700;
+    font-size: 22px;
+    color: $text2;
+  }
+
+  &__text {
+    @include os400;
+    font-size: 14px;
+    color: $text5;
+    line-height: 30px;
+  }
+
+  .slick-current {
+
+    .sub-slider__title{
+      color: $text5;
+    }
+
+    .sub-slider__text {
+      color: $text1;
+    }
+  }
+}
+
+/*==========================
+  Section service slider end
+  ========================== */
+
+
+/*==========================
+  Section review
+  ========================== */
+
+.review {
+  background-color: $bg6;
+  margin-top: -60px;
+  padding: 150px 0;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+
+  &__content {
+    display: flex;
+  }
+
+  &__rank {
+    width: 25%;
+    align-self: center;
+
+    &-title {
+      @include exo700;
+      font-size: 24px;
+      margin-bottom: 60px;
+    }
+
+    &-mark {
+      @include os400;
+      font-size: 36px;
+      margin-bottom: 20px;
+
+      span {
+        position: relative;
+        padding-top: 25px;
+
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 32px;
+          height: 2px;
+          background-color: $bg4;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+
+    &-star {
+      margin-bottom: 35px;
+    }
+
+    &-text {
+      @include exo400;
+      line-height: 24px;
+    }
+  }
+
+  &__slider {
+    width: 75%;
+    position: relative;
+    border-right: 1px solid $border6;
+    border-left: 1px solid $border6;
+
+    .slick-arrow {
+      position: absolute;
+      right: -5%;
+    }
+
+    .slick-prev {
+      top: 40%;
+    }
+
+    .slick-next {
+      top: 55%;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 0px;
+      border-width: 0px;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+      color: rgba($text9, .5);
+      transition: color .3s;
+
+      &:focus,
+      &:hover {
+        color: rgba($text9, 1);
+      }
+    }
+
+    &-box {
+      padding: 30px 30px;
+      display: flex !important;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    &-text {
+      flex: 1 0 auto;
+      @include os400;
+      color: $text2;
+      line-height: 24px;
+    }
+
+    &-info {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+
+      .wrap {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    &-name {
+      @include u400;
+      font-size: 18px;
+      color: $text3;
+      margin-bottom: 5px;
+    }
+
+    .slick-slide {
+
+      img {
+        display: inline;
+      }
+    }
+  }
+}
+
+/*==========================
+  Section review end
+  ========================== */
+
+
+/*==========================
+  Section map
+  ========================== */
+
+.map {
+  display: flex;
+  border-top: 1px solid $border6;
+
+  &__box {
+    flex: 1 0 50%;
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &-form {
+      width: 470px;
+      margin: 120px 120px 120px 0;
+
+    }
+
+    &-subtitle,
+    &-title {
+      @include exo400;
+      margin-bottom: 30px;
+    }
+
+    &-subtitle {
+      color: $text6;
+    }
+
+    &-title {
+      color: $text2;
+      font-size: 44px;
+    }
+
+    textarea,
+    input {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid $border6;
+
+      &::placeholder {
+        color: $text6;
+        @include os400;
+      }
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    button {
+      @include p400;
+      padding: 20px;
+      width: 100%;
+      background-color: $bg4;
+      border: none;
+      border-radius: 3px;
+      text-transform: uppercase;
+      color: $text1;
+      transition: color .3s, background-color .3s;
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        color: $text2;
+        background-color: $bg5;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
 
 
 
-
-
-
+/*==========================
+  Section map end
+  ========================== */
 
 
 /*======

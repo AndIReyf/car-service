@@ -36,4 +36,31 @@ $(function () {
     dots: true,
   });
 
+  $('.review__slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick-prev icon-angle-left"></button>',
+    nextArrow: '<button type="button" class="slick-next icon-angle-right"></button>',
+  });
+
+
+  $('.main-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.sub-slider'
+  });
+  $('.sub-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.main-slider',
+    dots: false,
+    vertical: true,
+    verticalSwiping: true,
+    prevArrow: '<button type="button" class="slick-prev icon-angle-down"></button>',
+    nextArrow: '<button type="button" class="slick-next icon-angle-up"></button>',
+  });
+
 });

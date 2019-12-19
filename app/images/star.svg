@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.5" height="23.28" viewBox="0 0 24.5 23.28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #aeb0b5;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="ion-android-star" class="cls-1" d="M395.993,5015.69l-2-8.61,6.671-5.82-8.793-.73-3.456-8.12-3.457,8.12-8.792.73,6.67,5.82-2,8.61,7.58-4.55Z" transform="translate(-376.156 -4992.41)"/>
+</svg>
