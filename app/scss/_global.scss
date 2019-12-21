@@ -52,3 +52,27 @@ a {
   margin: 0 auto;
   height: 100%;
 }
+
+.decor{
+  @include exo300;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: $text3;
+  transform: rotate(-90deg);
+  
+  span {
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 1px;
+      background-color: $text3;
+      left: 0;
+      top: 50%;
+      transform: translate(-50%);
+    }
+  }
+}
