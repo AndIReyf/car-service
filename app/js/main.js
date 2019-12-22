@@ -75,17 +75,10 @@ $(function () {
         breakpoint: 850,
         settings: {
           slidesToShow: 1,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          arrows: false,
           dots: true,
+          arrows: false,
         }
       }
-
     ]
   });
 
