@@ -8,7 +8,7 @@ $(function () {
     fade: true,
     prevArrow: '<button type="button" class="slick-prev icon-angle-left"></button>',
     nextArrow: '<button type="button" class="slick-next icon-angle-right"></button>',
-
+    
   });
 
 
@@ -20,7 +20,7 @@ $(function () {
     gallery: {
       enabled: true,
       navigateByImgClick: true,
-      preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+      preload: [0, 1]
     },
     image: {
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',

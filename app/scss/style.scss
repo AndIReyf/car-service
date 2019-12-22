@@ -77,6 +77,26 @@
     li {
       display: inline-block;
       margin-left: 35px;
+
+      &:first-child {
+        animation-delay: .5s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: .7s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: .9s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 1.1s;
+      }
+
+      &:last-child {
+        animation-delay: 1.3s;
+      }
     }
 
     a {
@@ -89,6 +109,7 @@
         color: $text7;
       }
     }
+    
   }
 
   &__phone {
@@ -102,6 +123,7 @@
       color: $text1;
       transition: all .3s;
       position: relative;
+      animation-delay: 1.5s;
 
       &:hover {
         color: $text7;
@@ -292,7 +314,7 @@
   .slick-dots {
     position: absolute;
     right: 3rem;
-    top: 65%;
+    top: 65vh;
     display: none !important;
     cursor: pointer;
     z-index: 5;
@@ -301,14 +323,14 @@
       display: inline-block;
 
       &+li {
-        margin-left: 10px;
+        margin-left: 15px;
       }
 
       &.slick-active {
         button {
           background-color: rgba($text2, 1);
-          width: 20px;
-          height: 20px;
+          width: 25px;
+          height: 25px;
         }
       }
 
@@ -317,8 +339,8 @@
         padding: 0;
         background-color: rgba($text2, .5);
         border-radius: 50%;
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
@@ -392,6 +414,7 @@
   &__subtitle {
     font-size: 30px;
     margin-bottom: 35px;
+    animation-delay: .5s;
   }
 
   &__link {
@@ -405,6 +428,7 @@
     text-align: center;
     transition: color .3s, border .3s;
     text-transform: uppercase;
+    animation-delay: 1.2s;
 
     &:hover {
       color: $text7;
@@ -487,7 +511,7 @@
   padding: 50px 0;
 
   &::before,
-  &::after{
+  &::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -495,11 +519,11 @@
     border-left: 100vw solid transparent;
   }
 
-  &::before{
+  &::before {
     top: -100px;
   }
 
-  &::after{
+  &::after {
     transform: rotateX(180deg);
     bottom: -100px;
   }
@@ -630,7 +654,7 @@
       }
 
       &:nth-child(3),
-      &:nth-child(4){
+      &:nth-child(4) {
         margin-top: -1px;
       }
     }
@@ -746,8 +770,8 @@
   &__content {
     display: flex;
 
-    @media (max-width: 850px){
-      &{
+    @media (max-width: 850px) {
+      & {
         flex-wrap: wrap;
         justify-content: space-between;
         flex-direction: row;
@@ -773,16 +797,16 @@
       line-height: 28px;
     }
 
-    @media (max-width: 850px){
-      &{
+    @media (max-width: 850px) {
+      & {
         width: 50%;
       }
     }
 
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       width: 100%;
 
-      &-title{
+      &-title {
         text-align: center;
       }
     }
@@ -892,19 +916,19 @@
     }
 
     @media (max-width: 850px) {
-      
-      &{
+
+      & {
         align-content: space-around;
 
-        .slick-dots{
+        .slick-dots {
           text-align: center;
           width: 100%;
           left: 50%;
           transform: translate(-50%);
           top: 110%;
 
-          li{
-            &+li{
+          li {
+            &+li {
               margin-left: 15px;
             }
 
@@ -929,13 +953,13 @@
   .slick-slider {
     width: 50%;
 
-    @media (max-width: 1200px){
-      &{
+    @media (max-width: 1200px) {
+      & {
         width: 33.333%;
       }
     }
 
-    @media (max-width: 850px){
+    @media (max-width: 850px) {
       width: 100%;
     }
   }
@@ -1025,8 +1049,8 @@
   padding: 150px 0 200px;
   position: relative;
 
-  &-decor{
-    &.decor{
+  &-decor {
+    &.decor {
       position: absolute;
       bottom: 100px;
       left: 0;
@@ -1433,7 +1457,7 @@
     }
 
     .slick-next {
-     left: 55%;
+      left: 55%;
     }
 
     .slick-prev {
