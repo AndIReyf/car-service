@@ -54,7 +54,7 @@
       letter-spacing: 2px;
 
       span {
-        color: $text9;
+        color: $text7;
       }
     }
 
@@ -66,12 +66,13 @@
     }
   }
 
-  &__nav {
-    z-index: 5;
-    overflow: auto;
+  &__nav{
+    z-index: 4;
   }
 
   &__link {
+    z-index: 5;
+    overflow: auto;
     display: inline-block;
 
     li {
@@ -102,6 +103,7 @@
     a {
       @include u700;
       font-size: 14px;
+      text-transform: uppercase;
       color: $text8;
       transition: all .3s;
 
@@ -109,13 +111,12 @@
         color: $text7;
       }
     }
-    
+
   }
 
   &__phone {
-    display: inline-block;
     margin-left: 70px;
-    z-index: 5;
+    z-index: 4;
 
     span {
       padding-left: 30px;
@@ -219,15 +220,17 @@
   }
 
   @media (max-width: 850px) {
+    position: relative;
+
     &__burger {
       display: block;
     }
 
     &__link {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
 
       li {
         margin-left: 0;
@@ -245,8 +248,8 @@
       flex-direction: column;
       z-index: 2;
       position: fixed;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       left: 0;
       top: -100%;
       background-color: rgba($bg3, .95);
@@ -258,9 +261,7 @@
     }
 
     &__phone {
-      order: -1;
-      margin-left: 10px;
-      margin-top: 30px;
+      display: none !important;
     }
   }
 }
@@ -286,8 +287,8 @@
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translate(0, -50%);
-    background-color: $bg4;
+    transform: translateY(-50%);
+    background-color: $bg5;
     height: 23rem;
     width: 20rem;
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
@@ -300,6 +301,8 @@
   }
 
   @media (max-width: 850px) {
+    margin-top: 0;
+
     &::after {
       right: -160px;
     }
@@ -313,7 +316,7 @@
 
   .slick-dots {
     position: absolute;
-    right: 3rem;
+    right: 2rem;
     top: 65vh;
     display: none !important;
     cursor: pointer;
@@ -353,12 +356,10 @@
 
   .slick-prev {
     top: 45%;
-    transform: translate(-45%);
   }
 
   .slick-next {
     top: 55%;
-    transform: translate(-55%);
   }
 
   .icon-angle-left,
@@ -403,7 +404,7 @@
   &__subtitle,
   &__title {
     @include exo300;
-    color: $text9;
+    color: $text8;
   }
 
   &__title {
@@ -419,10 +420,10 @@
 
   &__link {
     @include u700;
-    color: $text9;
+    color: $text1;
     font-size: 1em;
     padding: 1.5em;
-    border: 2px solid $border4;
+    border: 2px solid $border6;
     border-radius: 30px;
     width: 35%;
     text-align: center;
@@ -448,7 +449,7 @@
     }
 
     .slick-arrow {
-      display: none;
+      display: none !important;
     }
   }
 
@@ -456,6 +457,7 @@
 
     &__box {
       align-items: center;
+      justify-content: flex-start;
     }
 
     &__link {
@@ -463,9 +465,10 @@
     }
 
     .slick-dots {
+      z-index: 1;
       position: absolute;
-      top: 73%;
-      left: 45%;
+      right: calc(50vw - 30px);
+      top: 70vh;
 
       li {
         &.slick-active {
@@ -484,7 +487,6 @@
       }
     }
   }
-
   @media (max-width: 450px) {
     &__title {
       font-size: 70px;
@@ -506,7 +508,7 @@
   ====================== */
 
 .select-service {
-  background-color: $bg4;
+  background-color: $bg5;
   position: relative;
   padding: 50px 0;
 
@@ -515,7 +517,7 @@
     content: '';
     position: absolute;
     width: 100%;
-    border-bottom: 100px solid $bg4;
+    border-bottom: 100px solid $bg5;
     border-left: 100vw solid transparent;
   }
 
@@ -679,7 +681,7 @@
       @include exo300;
       font-size: 24px;
       color: $text3;
-      border-left: 2px solid $border4;
+      border-left: 2px solid $border6;
       padding-left: 24px;
       transition: color .3s, border-left .3s;
       position: relative;
@@ -748,8 +750,8 @@
     z-index: 1;
   }
 
-  @media (max-width: 600px) {
-    padding-top: 2rem;
+  @media (max-width: 850px) {
+    padding-top: 0rem;
   }
 
   &__decor {
@@ -771,15 +773,14 @@
     display: flex;
 
     @media (max-width: 850px) {
-      & {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        flex-direction: row;
-      }
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
     }
   }
 
   &__service {
+    text-align: center;
     align-self: center;
     padding-right: 40px;
 
@@ -798,9 +799,8 @@
     }
 
     @media (max-width: 850px) {
-      & {
-        width: 50%;
-      }
+      width: 50%;
+      padding-right: 0;
     }
 
     @media (max-width: 600px) {
@@ -1102,7 +1102,7 @@
         height: 80%;
         left: -302%;
         top: 10%;
-        border: 1px solid $border4;
+        border: 1px solid $border5;
         z-index: -2;
       }
     }
@@ -1123,15 +1123,13 @@
   }
 
   @media (max-width: 1250px) {
-    & {
-      width: 100%;
-      margin-bottom: 50px;
-    }
+    width: 100%;
+    margin-bottom: 50px;
   }
 
   @media (max-width: 750px) {
-    &__box {
 
+    &__box {
       &.car {
         img {
           height: 500px;
@@ -1181,12 +1179,12 @@
     background-color: transparent;
     cursor: pointer;
     outline: none;
-    color: rgba($text9, .5);
+    color: rgba($text7, .5);
     transition: color .3s;
 
     &:focus,
     &:hover {
-      color: rgba($text9, 1);
+      color: rgba($text7, 1);
     }
   }
 
@@ -1230,9 +1228,7 @@
   }
 
   @media (max-width: 1250px) {
-    & {
-      width: 100%;
-    }
+    width: 100%;
 
     &__content {
       margin: 0;
@@ -1240,7 +1236,7 @@
     }
 
     .slick-arrow {
-      top: 130%;
+      top: 40vh;
       height: 0;
     }
 
@@ -1258,7 +1254,7 @@
     .slick-dots {
       position: absolute;
       left: 50%;
-      transform: translate(-50%);
+      transform: translateX(-50%);
       bottom: -70px;
 
       li {
@@ -1270,7 +1266,7 @@
 
         button {
           font-size: 0;
-          background-color: rgba($bg4, .5);
+          background-color: rgba($bg5, .5);
           width: 15px;
           height: 15px;
           border-radius: 50%;
@@ -1278,7 +1274,7 @@
 
         &.slick-active {
           button {
-            background-color: rgba($bg4, 1);
+            background-color: rgba($bg5, 1);
             width: 20px;
             height: 20px;
           }
@@ -1344,7 +1340,7 @@
           position: absolute;
           width: 32px;
           height: 2px;
-          background-color: $bg4;
+          background-color: $bg5;
           left: 0;
           top: 0;
         }
@@ -1387,17 +1383,17 @@
       background-color: transparent;
       cursor: pointer;
       outline: none;
-      color: rgba($text9, .5);
+      color: rgba($text7, .5);
       transition: color .3s;
 
       &:focus,
       &:hover {
-        color: rgba($text9, 1);
+        color: rgba($text7, 1);
       }
     }
 
     &-box {
-      padding: 30px 30px;
+      padding: 30px;
       display: flex !important;
       flex-direction: column;
       min-height: 100%;
@@ -1453,7 +1449,7 @@
 
   @media (max-width: 1300px) {
     .slick-arrow {
-      top: 110%;
+      top: 35vh;
     }
 
     .slick-next {
@@ -1489,7 +1485,7 @@
 
         button {
           font-size: 0;
-          background-color: rgba($bg4, .5);
+          background-color: rgba($bg5, .5);
           width: 15px;
           height: 15px;
           border-radius: 50%;
@@ -1497,7 +1493,7 @@
 
         &.slick-active {
           button {
-            background-color: rgba($bg4, 1);
+            background-color: rgba($bg5, 1);
             width: 20px;
             height: 20px;
           }
@@ -1591,7 +1587,7 @@
       @include p400;
       padding: 20px;
       width: 100%;
-      background-color: $bg4;
+      background-color: $bg3;
       border: none;
       border-radius: 3px;
       text-transform: uppercase;
