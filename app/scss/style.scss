@@ -389,9 +389,9 @@
 
   &__content {
     height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: 50%/cover no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgba(#000, .6);
   }
 
   &__box {
